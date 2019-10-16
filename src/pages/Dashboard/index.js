@@ -41,10 +41,16 @@ export default function Dashboard({ history }) {
     setExpand(index);
   }
 
-  function filterList() {
+  function filterList(value) {
+    setSearchText(value);
     let items = books;
     items = items.filter(item => {
-      return item.title.toLowerCase().search(searchText.toLowerCase()) !== -1;
+      return (
+        item.title
+          .toLowerCase()
+          .trim()
+          .search(searchText.toLowerCase()) !== -1
+      );
     });
     setFilterBooks(items);
   }
@@ -101,9 +107,9 @@ export default function Dashboard({ history }) {
             type='text'
             value={searchText}
             placeholder='Informe o titulo do livro'
-            onChange={event => setSearchText(event.target.value)}
+            onChange={event => filterList(event.target.value)}
           />
-          <button onClick={() => filterList()}>Pesquisar</button>
+          <button onClick={() => filterList(searchText)}>Pesquisar</button>
         </SearchBar>
         {isAdmin && (
           <Button onClick={() => setIsVisible(true)}>Adicionar</Button>
