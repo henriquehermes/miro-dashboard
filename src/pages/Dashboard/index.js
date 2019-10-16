@@ -69,6 +69,17 @@ export default function Dashboard({ history }) {
     setBooks(newList);
   }
 
+  async function handleDelete(oldBook) {
+    const newList = books.filter(b => {
+      if (b.id !== oldBook.id) return b;
+    });
+
+    await api.delete(`/books/${oldBook.id}`);
+
+    setBooks(newList);
+    setFilterBooks(newList);
+  }
+
   return (
     <Container>
       <Header>
@@ -121,7 +132,12 @@ export default function Dashboard({ history }) {
                       >
                         Editar
                       </BookRent>
-                      <BookRent disabled={book.rented}>Excluir</BookRent>
+                      <BookRent
+                        disabled={book.rented}
+                        onClick={() => handleDelete(book)}
+                      >
+                        Excluir
+                      </BookRent>
                     </>
                   )}
                 </Row>
