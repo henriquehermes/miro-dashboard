@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
-import Login from './pages/Login';
-import Dashboard from './pages/Dashboard';
+import Login from './pages/Login/LoginController';
+import Dashboard from './pages/Dashboard/DashboardController';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route

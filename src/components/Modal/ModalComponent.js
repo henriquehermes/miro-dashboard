@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-responsive-modal';
-import api from '../../../config/api';
+import api from '../../config/api';
 
-import { Form } from './styles';
+import { Form } from './ModalStyles';
 
 export default function ModalComponent({
   data,
