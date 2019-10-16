@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import api from '../../config/api';
+import { getData, putData, deleteData } from '../../services/DashboardService';
 import DashboardComponent from './DashboardComponent';
 
 export default function Dashboard({ history }) {
@@ -14,9 +14,9 @@ export default function Dashboard({ history }) {
 
   useEffect(() => {
     async function loadBooks() {
-      const response = await api.get('/books');
-      setBooks(response.data);
-      setFilterBooks(response.data);
+      const data = await getData();
+      setBooks(data);
+      setFilterBooks(data);
     }
     loadBooks();
   }, []);
@@ -46,9 +46,9 @@ export default function Dashboard({ history }) {
 
   async function rentBook(book) {
     book.rented = true;
-    await api.put(`/books/${book.id}`, book);
+    putData(book);
 
-    const { data } = await api.get('/books');
+    const data = await getData();
     setBooks(data);
     setFilterBooks(data);
   }
@@ -76,7 +76,7 @@ export default function Dashboard({ history }) {
       if (b.id !== oldBook.id) return b;
     });
 
-    await api.delete(`/books/${oldBook.id}`);
+    await deleteData(oldBook);
 
     setBooks(newList);
     setFilterBooks(newList);

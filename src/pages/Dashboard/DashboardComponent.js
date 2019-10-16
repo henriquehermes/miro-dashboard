@@ -50,7 +50,12 @@ export default function Dashboard(props) {
       </Styles.Header>
       <Styles.Content>
         <Styles.Title>Lista de livros</Styles.Title>
-        {filterBooks.length > 0 &&
+        {filterBooks.length === 0 ? (
+          <div>
+            <h1>Nenhum livro cadastrado :(</h1>
+          </div>
+        ) : (
+          filterBooks.length > 0 &&
           filterBooks.map((book, index) => (
             <Styles.Animated
               key={book.id}
@@ -111,7 +116,8 @@ export default function Dashboard(props) {
                 </Styles.DValue>
               </Styles.Column>
             </Styles.Animated>
-          ))}
+          ))
+        )}
       </Styles.Content>
       <Modal
         isVisible={isVisible}
