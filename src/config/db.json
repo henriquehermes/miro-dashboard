@@ -1,0 +1,132 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "author": "Chinua Achebe",
+      "pages": 209,
+      "title": "Things Fall Apart",
+      "year": 1958,
+      "rented": false
+    },
+    {
+      "id": 2,
+      "author": "Hans Christian Andersen",
+      "pages": 784,
+      "title": "Fairy tales",
+      "year": 1836,
+      "rented": false
+    },
+    {
+      "id": 3,
+      "author": "Dante Alighieri",
+      "pages": 928,
+      "title": "The Divine Comedy",
+      "year": 1315,
+      "rented": true
+    },
+    {
+      "id": 4,
+      "author": "Unknown",
+      "pages": 160,
+      "title": "The Epic Of Gilgamesh",
+      "year": -1700,
+      "rented": false
+    },
+    {
+      "id": 5,
+      "author": "Unknown",
+      "pages": 176,
+      "title": "The Book Of Job",
+      "year": -600,
+      "rented": false
+    },
+    {
+      "id": 6,
+      "author": "Unknown",
+      "pages": 288,
+      "title": "One Thousand and One Nights",
+      "year": 1200,
+      "rented": false
+    },
+    {
+      "id": 7,
+      "author": "Unknown",
+      "pages": 384,
+      "title": "Njál's Saga",
+      "year": 1350,
+      "rented": false
+    },
+    {
+      "id": 8,
+      "author": "Jane Austen",
+      "pages": 226,
+      "title": "Pride and Prejudice",
+      "year": 1813,
+      "rented": false
+    },
+    {
+      "id": 9,
+      "author": "Honoré de Balzac",
+      "pages": 443,
+      "title": "Le Père Goriot",
+      "year": 1835,
+      "rented": false
+    },
+    {
+      "id": 10,
+      "author": "Samuel Beckett",
+      "pages": 256,
+      "title": "Molloy, Malone Dies, The Unnamable, the trilogy",
+      "year": 1952,
+      "rented": false
+    },
+    {
+      "id": 11,
+      "author": "Giovanni Boccaccio",
+      "pages": 1024,
+      "title": "The Decameron",
+      "year": 1351,
+      "rented": false
+    },
+    {
+      "id": 12,
+      "author": "Jorge Luis Borges",
+      "pages": 224,
+      "title": "Ficciones",
+      "year": 1965,
+      "rented": false
+    },
+    {
+      "id": 13,
+      "author": "Emily Brontë",
+      "pages": 342,
+      "title": "Wuthering Heights",
+      "year": 1847,
+      "rented": false
+    },
+    {
+      "id": 14,
+      "author": "Albert Camus",
+      "pages": 185,
+      "title": "The Stranger",
+      "year": 1942,
+      "rented": false
+    },
+    {
+      "id": 15,
+      "author": "Paul Celan",
+      "pages": 320,
+      "title": "Poems",
+      "year": 1952,
+      "rented": false
+    },
+    {
+      "author": "",
+      "pages": "",
+      "year": "",
+      "title": "Teste",
+      "rented": false,
+      "id": 16
+    }
+  ]
+}
