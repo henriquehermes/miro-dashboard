@@ -41,7 +41,12 @@ export default function Dashboard(props) {
             Adicionar
           </Button>
         )}
-        <Button onClick={() => handleLogout()}>Sair</Button>
+        <Button
+          marginHorizontal={isAdmin ? false : true}
+          onClick={() => handleLogout()}
+        >
+          Sair
+        </Button>
       </Styles.Header>
       <Styles.Content>
         <Styles.Title>Lista de livros</Styles.Title>
@@ -60,7 +65,7 @@ export default function Dashboard(props) {
                   <Button
                     marginHorizontal
                     withBorder
-                    onClick={() => expandBook(index)}
+                    onClick={() => expandBook(expand === index ? null : index)}
                     active={expand === index}
                   >
                     Detalhes
