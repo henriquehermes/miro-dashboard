@@ -18,16 +18,36 @@ export default function ModalComponent({
   });
 
   useEffect(() => {
-    if (data) setBook(data);
-  });
+    if (data) {
+      setBook({
+        title: data.title,
+        author: data.author,
+        pages: data.pages,
+        year: data.year,
+      });
+    }
+  }, [data]);
 
   async function handleSubmit(e) {
-    const { title, author, pages, year } = book;
     e.preventDefault();
+    const { title, author, pages, year } = book;
+
     if (title !== '' && author !== '' && pages !== '' && year !== '') {
       book.rented = false;
       const { data } = await api.post(`/books`, book);
       updateBooks(data);
+      handleClose();
+    }
+  }
+
+  async function handleEdit(e) {
+    e.preventDefault();
+    const { title, author, pages, year } = book;
+
+    if (title !== '' && author !== '' && pages !== '' && year !== '') {
+      const response = await api.put(`/books/${data.id}`, book);
+
+      updateBooks(response.data, true);
       handleClose();
     }
   }
@@ -64,7 +84,11 @@ export default function ModalComponent({
           value={book.year}
           onChange={event => setBook({ ...book, year: event.target.value })}
         />
-        <button onClick={e => handleSubmit(e)}>Adicionar</button>
+        {data ? (
+          <button onClick={e => handleEdit(e)}>Salvar</button>
+        ) : (
+          <button onClick={e => handleSubmit(e)}>Adicionar</button>
+        )}
       </Form>
     </Modal>
   );

@@ -63,10 +63,22 @@ export default function Dashboard({ history }) {
     setFilterBooks(data);
   }
 
-  function handleUpdate(newBook) {
-    const newList = books;
-    newList.push(newBook);
-    setBooks(newList);
+  function handleUpdate(newBook, isChanged) {
+    if (isChanged) {
+      const newList = books.map(b => {
+        if (b.id === newBook.id) b = newBook;
+        return b;
+      });
+
+      setBooks(newList);
+      setFilterBooks(newList);
+    } else {
+      const newList = books;
+      newList.push(newBook);
+
+      setBooks(newList);
+      setFilterBooks(newList);
+    }
   }
 
   async function handleDelete(oldBook) {
@@ -156,12 +168,15 @@ export default function Dashboard({ history }) {
           ))}
       </Content>
       <Modal
-        data={editBook}
-        isVisible={isVisible || editBook}
-        handleClose={() => {
-          setIsVisible(false), setEditBook(false);
-        }}
+        isVisible={isVisible}
+        handleClose={() => setIsVisible(false)}
         updateBooks={newBook => handleUpdate(newBook)}
+      />
+      <Modal
+        data={editBook}
+        isVisible={!!editBook}
+        handleClose={() => setEditBook('')}
+        updateBooks={(newBook, isChanged) => handleUpdate(newBook, isChanged)}
       />
     </Container>
   );
