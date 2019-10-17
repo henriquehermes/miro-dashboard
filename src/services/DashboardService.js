@@ -11,7 +11,6 @@ export async function putData(book, id) {
     const response = await Api.put(`/books/${id}`, book);
     return response.data;
   }
-  console.log(book)
     const response = await Api.put(`/books/${book.id}`, book);
     return response.data;
 }
