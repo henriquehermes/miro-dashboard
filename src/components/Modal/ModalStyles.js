@@ -12,7 +12,7 @@ const defaultBox = css`
   box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.1);
 `;
 
-export const Form = styled.div`
+const Form = styled.div`
   margin-top: 15px;
   display: flex;
   width: 300px;
@@ -39,3 +39,5 @@ export const Form = styled.div`
     background: #fff;
   }
 `;
+
+export default Form;

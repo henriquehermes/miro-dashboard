@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
@@ -12,8 +14,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
         <Component {...props} />
       ) : (
         <Redirect to={{ pathname: '/', state: { from: props.location } }} />
-      )
-    }
+      )}
   />
 );
 
@@ -23,6 +24,7 @@ export default function Routes() {
       <Switch>
         <Route path='/' exact component={Login} />
         <PrivateRoute path='/dashboard' component={Dashboard} />
+        <Redirect from="/*" to="/" />
       </Switch>
     </BrowserRouter>
   );

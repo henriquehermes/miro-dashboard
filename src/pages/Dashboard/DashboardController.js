@@ -1,4 +1,7 @@
+/* eslint-disable no-param-reassign */
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+
 import { getData, putData, deleteData } from '../../services/DashboardService';
 import DashboardComponent from './DashboardComponent';
 
@@ -46,7 +49,7 @@ export default function Dashboard({ history }) {
 
   async function rentBook(book) {
     book.rented = true;
-    putData(book);
+    await putData(book);
 
     const data = await getData();
     setBooks(data);
@@ -73,7 +76,10 @@ export default function Dashboard({ history }) {
 
   async function handleDelete(oldBook) {
     const newList = books.filter(b => {
-      if (b.id !== oldBook.id) return b;
+      if (b.id !== oldBook.id) {
+        return b;
+      } 
+        return false
     });
 
     await deleteData(oldBook);
@@ -101,3 +107,7 @@ export default function Dashboard({ history }) {
     />
   );
 }
+
+Dashboard.propTypes = {
+  history: PropTypes.shape.isRequired,
+};

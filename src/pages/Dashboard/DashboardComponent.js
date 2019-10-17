@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import * as Styles from './DashboardStyles';
 import Modal from '../../components/Modal/ModalComponent';
@@ -22,8 +23,6 @@ export default function Dashboard(props) {
     setEditBook,
     setIsVisible,
   } = props;
-
-  const widthSize = window.innerWidth;
 
   return (
     <Styles.Container>
@@ -67,12 +66,16 @@ export default function Dashboard(props) {
             <Styles.Animated
               key={book.id}
               duration={500}
-              height={expand === index ? 'auto' : widthSize < 768 ? 50 : 50}
+              height={expand === index ? 'auto' : 50}
             >
               <Styles.Column>
                 <Styles.Row>
                   <Styles.BookTitle>
-                    <strong>{book.title}</strong> - {book.author}
+                    <strong>{book.title}</strong>
+                    {' '}
+                    -
+                    {' '}
+                    {book.author}
                   </Styles.BookTitle>
                   <Button
                     marginHorizontal
@@ -112,13 +115,18 @@ export default function Dashboard(props) {
                   )}
                 </Styles.Row>
                 <Styles.DValue>
-                  <strong>Paginas:</strong> {book.pages}
+                  <strong>Paginas:</strong> 
+                  {' '}
+                  {book.pages}
                 </Styles.DValue>
                 <Styles.DValue>
-                  <strong>Ano:</strong> {book.year}
+                  <strong>Ano:</strong> 
+                  {' '}
+                  {book.year}
                 </Styles.DValue>
                 <Styles.DValue>
-                  <strong>Situação:</strong>{' '}
+                  <strong>Situação:</strong>
+                  {' '}
                   {book.rented ? 'Alugado' : 'Disponível'}
                 </Styles.DValue>
               </Styles.Column>
@@ -134,9 +142,28 @@ export default function Dashboard(props) {
       <Modal
         data={editBook}
         isVisible={!!editBook}
-        handleClose={() => setEditBook('')}
+        handleClose={() => setEditBook(false)}
         updateBooks={(newBook, isChanged) => handleUpdate(newBook, isChanged)}
       />
     </Styles.Container>
   );
 }
+
+Dashboard.propTypes = {
+  handleUpdate: PropTypes.func.isRequired,
+  handleDelete: PropTypes.func.isRequired,
+  rentBook: PropTypes.func.isRequired,
+  setEditBook: PropTypes.func.isRequired,
+  setIsVisible: PropTypes.func.isRequired,
+  handleLogout: PropTypes.func.isRequired,
+  filterList: PropTypes.shape.isRequired,
+  isAdmin: PropTypes.bool.isRequired,
+  isVisible: PropTypes.bool.isRequired,
+  editBook: PropTypes.shape.isRequired,
+  expandBook: PropTypes.func.isRequired,
+  filterBooks: PropTypes.shape.isRequired,
+  expand: PropTypes.bool.isRequired,
+  searchText: PropTypes.string.isRequired,
+  
+};
+

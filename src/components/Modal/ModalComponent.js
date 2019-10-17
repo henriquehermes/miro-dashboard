@@ -1,8 +1,11 @@
+/* eslint-disable react/forbid-prop-types */
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-responsive-modal';
-import api from '../../config/api';
+import PropTypes from 'prop-types';
 
-import { Form } from './ModalStyles';
+import { putData, postData } from "../../services/DashboardService"
+
+import Form  from './ModalStyles';
 
 export default function ModalComponent({
   data,
@@ -34,8 +37,8 @@ export default function ModalComponent({
 
     if (title !== '' && author !== '' && pages !== '' && year !== '') {
       book.rented = false;
-      const { data } = await api.post(`/books`, book);
-      updateBooks(data);
+      const response = await postData(book)
+      updateBooks(response);
       handleClose();
     }
   }
@@ -45,16 +48,19 @@ export default function ModalComponent({
     const { title, author, pages, year } = book;
 
     if (title !== '' && author !== '' && pages !== '' && year !== '') {
-      const response = await api.put(`/books/${data.id}`, book);
-
-      updateBooks(response.data, true);
+      const response = await putData(book, data.id)
+      updateBooks(response, true);
       handleClose();
     }
   }
 
   return (
     <Modal open={isVisible} onClose={handleClose} center closeIconSize={25}>
-      <h2>{data ? 'Editar' : 'Adicionar'} livro</h2>
+      <h2>
+        {data ? 'Editar' : 'Adicionar'}
+        {' '}
+        livro
+      </h2>
       <Form>
         <input
           placeholder='Titulo'
@@ -85,11 +91,18 @@ export default function ModalComponent({
           onChange={event => setBook({ ...book, year: event.target.value })}
         />
         {data ? (
-          <button onClick={e => handleEdit(e)}>Salvar</button>
+          <button type="button" onClick={e => handleEdit(e)}>Salvar</button>
         ) : (
-          <button onClick={e => handleSubmit(e)}>Adicionar</button>
+          <button type="button" onClick={e => handleSubmit(e)}>Adicionar</button>
         )}
       </Form>
     </Modal>
   );
 }
+
+ModalComponent.propTypes = {
+  data: PropTypes.shape.isRequired,
+  isVisible: PropTypes.bool.isRequired,
+  handleClose: PropTypes.func.isRequired,
+  updateBooks: PropTypes.func.isRequired,
+};

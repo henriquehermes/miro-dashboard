@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
+import PropTypes from 'prop-types';
 import Input from '../../components/Input/InputComponent';
 import Button from '../../components/Button/ButtonComponent';
 
@@ -36,6 +37,14 @@ const LoginComponent = props => {
       </Box>
     </Container>
   );
+};
+
+LoginComponent.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+  setUsername: PropTypes.func.isRequired,
+  setPassword: PropTypes.func.isRequired,
+  password: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
 };
 
 export default LoginComponent;

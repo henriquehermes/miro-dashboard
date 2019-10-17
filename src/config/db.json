@@ -6,7 +6,7 @@
       "pages": 209,
       "title": "Things Fall Apart",
       "year": 1958,
-      "rented": true
+      "rented": false
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "pages": 784,
       "title": "Fairy tales",
       "year": 1836,
-      "rented": true
+      "rented": false
     },
     {
       "id": 3,
@@ -22,15 +22,14 @@
       "pages": 928,
       "title": "The Divine Comedy",
       "year": 1315,
-      "rented": true
+      "rented": false
     },
     {
-      "id": 5,
-      "author": "Unknown",
-      "pages": 176,
-      "title": "The Book Of Job",
-      "year": -600,
-      "rented": false
+      "title": "123",
+      "author": "Unknown3123",
+      "pages": "12312312",
+      "year": "-123123",
+      "id": 5
     },
     {
       "id": 6,
@@ -97,11 +96,11 @@
       "rented": false
     },
     {
-      "id": 14,
+      "title": "The Stranger",
       "author": "Albert Camus",
       "pages": 185,
-      "title": "The Stranger",
       "year": 1942,
+      "id": 14,
       "rented": false
     },
     {
