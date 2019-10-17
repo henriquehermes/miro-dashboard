@@ -1,7 +1,7 @@
 import React from 'react';
 import './style/App.css';
-import Routes from './routes';
 import { ThemeProvider } from 'styled-components';
+import Routes from './routes';
 
 const theme = {
   primary: '#00bb77',

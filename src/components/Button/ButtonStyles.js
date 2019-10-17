@@ -27,7 +27,7 @@ const defaultActive = css`
   color: #fff;
 `;
 
-export const Button = styled.button`
+const Button = styled.button`
   cursor: pointer;
   height: 40px;
   width: 90px;
@@ -37,4 +37,10 @@ export const Button = styled.button`
   ${props => (props.marginHorizontal ? marginHorizontal : '')};
   ${props => (props.disabled ? 'opacity: 0.5' : 1)};
   ${props => (props.active ? defaultActive : '')};
+
+  @media (max-width: 767px) {
+    ${props => (props.marginVertical ? `margin-top: 10px; width: 100%;` : '')}
+  }
 `;
+
+export default Button;

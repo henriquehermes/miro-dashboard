@@ -23,6 +23,8 @@ export default function Dashboard(props) {
     setIsVisible,
   } = props;
 
+  const widthSize = window.innerWidth;
+
   return (
     <Styles.Container>
       <Styles.Header>
@@ -37,11 +39,19 @@ export default function Dashboard(props) {
           <Button onClick={() => filterList(searchText)}>Pesquisar</Button>
         </Styles.SearchBar>
         {isAdmin && (
-          <Button marginHorizontal onClick={() => setIsVisible(true)}>
+          <Button
+            marginHorizontal
+            marginVertical
+            onClick={() => setIsVisible(true)}
+          >
             Adicionar
           </Button>
         )}
-        <Button marginHorizontal={!isAdmin} onClick={() => handleLogout()}>
+        <Button
+          marginHorizontal={!isAdmin}
+          marginVertical
+          onClick={() => handleLogout()}
+        >
           Sair
         </Button>
       </Styles.Header>
@@ -57,7 +67,7 @@ export default function Dashboard(props) {
             <Styles.Animated
               key={book.id}
               duration={500}
-              height={expand === index ? 'auto' : 50}
+              height={expand === index ? 'auto' : widthSize < 768 ? 50 : 50}
             >
               <Styles.Column>
                 <Styles.Row>

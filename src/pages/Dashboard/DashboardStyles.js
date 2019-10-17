@@ -19,6 +19,10 @@ export const Container = styled.div`
   flex: 1;
   height: 100%;
   padding: 40px;
+
+  @media (max-width: 767px) {
+    padding: 5px;
+  }
 `;
 
 export const SearchBar = styled.div`
@@ -56,6 +60,10 @@ export const Column = styled.div`
   padding: 0px 20px 10px 20px;
   width: 100%;
   background: #fff;
+
+  @media (max-width: 768px) {
+    overflow-x: scroll;
+  }
 `;
 
 export const Row = styled.div`
@@ -65,6 +73,10 @@ export const Row = styled.div`
   align-items: center;
   width: 100%;
   margin-bottom: 10px;
+
+  @media (max-width: 767px) {
+    width: 500px;
+  }
 `;
 
 export const Header = styled.div`
@@ -85,6 +97,11 @@ export const BookTitle = styled.h4`
   display: flex;
   flex: 1;
   font-weight: normal;
+  align-items: center;
+
+  @media (max-width: 767px) {
+    flex: 0.5;
+  }
 `;
 
 export const DValue = styled.h4`

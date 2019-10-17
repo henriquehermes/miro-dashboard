@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Remder Button 1`] = `
+.c0 {
+  cursor: pointer;
+  height: 40px;
+  width: 90px;
+  font-weight: bold;
+  background: #fff;
+  border-radius: 6px;
+  border-color: #fff;
+  border-style: solid;
+  box-shadow: 0px 4px 18px 0px rgba(0,0,0,0.1);
+}
+
+<button
+  className="c0"
+/>
+`;
+
+exports[`Input Remder Input 1`] = `
+.c0 {
+  height: 40px;
+  width: 100%;
+  margin: 10px 0;
+  padding: 0 10px;
+  border: none;
+  background: #fff;
+  font-weight: bold;
+}
+
+<input
+  className="c0"
+/>
+`;
+
+exports[`Modal Remder Modal 1`] = `null`;

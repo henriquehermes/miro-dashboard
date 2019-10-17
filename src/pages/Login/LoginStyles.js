@@ -23,6 +23,10 @@ export const Box = styled.div`
   width: 450px;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 767px) {
+    margin: 0 20px;
+  }
 `;
 
 export const Title = styled.h1`

@@ -1,0 +1,178 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dashboard Render Dashboard 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  height: 100%;
+  padding: 40px;
+}
+
+.c2 {
+  background: #f6f6f6;
+  padding: 20px 16px;
+  border-radius: 6px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 40px;
+  width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c6 {
+  background: #f6f6f6;
+  margin-top: 20px;
+  padding: 20px 16px;
+  border-radius: 6px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c7 {
+  color: #282a36;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 45px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.c3 {
+  height: 40px;
+  width: 100%;
+  margin: 10px 0;
+  padding: 0 10px;
+  border: none;
+  background: #fff;
+  font-weight: bold;
+}
+
+.c4 {
+  cursor: pointer;
+  height: 40px;
+  width: 90px;
+  font-weight: bold;
+  background: #fff;
+  border-radius: 6px;
+  border-color: #fff;
+  border-style: solid;
+  box-shadow: 0px 4px 18px 0px rgba(0,0,0,0.1);
+}
+
+.c5 {
+  cursor: pointer;
+  height: 40px;
+  width: 90px;
+  font-weight: bold;
+  background: #fff;
+  border-radius: 6px;
+  border-color: #fff;
+  border-style: solid;
+  box-shadow: 0px 4px 18px 0px rgba(0,0,0,0.1);
+  margin: 0px 5px;
+}
+
+@media (max-width:767px) {
+  .c1 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: auto;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <input
+        className="c3"
+        id="search"
+        onChange={[Function]}
+        placeholder="Informe o titulo do livro"
+        type="text"
+        value=""
+      />
+      <button
+        className="c4"
+        onClick={[Function]}
+      >
+        Pesquisar
+      </button>
+    </div>
+    <button
+      className="c5"
+      onClick={[Function]}
+    >
+      Sair
+    </button>
+  </div>
+  <div
+    className="c6"
+  >
+    <h1
+      className="c7"
+    >
+      Lista de livros
+    </h1>
+    <div>
+      <h1>
+        Nenhum livro cadastrado :(
+      </h1>
+    </div>
+  </div>
+</div>
+`;

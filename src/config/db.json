@@ -10,11 +10,11 @@
     },
     {
       "id": 2,
-      "author": "Hans Christian Andersen",
+      "author": "Hans Christian",
       "pages": 784,
       "title": "Fairy tales",
       "year": 1836,
-      "rented": false
+      "rented": true
     },
     {
       "id": 3,
@@ -23,14 +23,6 @@
       "title": "The Divine Comedy",
       "year": 1315,
       "rented": true
-    },
-    {
-      "id": 4,
-      "author": "Unknown",
-      "pages": 160,
-      "title": "The Epic Of Gilgamesh",
-      "year": -1700,
-      "rented": false
     },
     {
       "id": 5,
@@ -44,7 +36,7 @@
       "id": 6,
       "author": "Unknown",
       "pages": 288,
-      "title": "One Thousand and One Nights",
+      "title": "One Thousand",
       "year": 1200,
       "rented": false
     },
@@ -76,7 +68,7 @@
       "id": 10,
       "author": "Samuel Beckett",
       "pages": 256,
-      "title": "Molloy, Malone Dies, The Unnamable, the trilogy",
+      "title": "Molloy, Malone Dies",
       "year": 1952,
       "rented": false
     },

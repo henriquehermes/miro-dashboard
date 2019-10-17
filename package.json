@@ -6,15 +6,17 @@
   "scripts": {
     "start": "webpack-dev-server --open --hot --mode development",
     "build": "webpack --mode production",
-    "mock:api": "json-server --watch src/config/db.json --port 4000"
+    "mock:api": "json-server --watch src/config/db.json --port 4000",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.4.0",
-    "@babel/preset-env": "^7.4.2",
-    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.5",
     "css-loader": "^2.1.1",
     "eslint": "^6.5.1",
@@ -28,6 +30,8 @@
     "eslint-plugin-react-hooks": "^1.7.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.9.0",
+    "jest-styled-components": "^6.3.3",
     "prettier": "^1.18.2",
     "style-loader": "^0.23.1",
     "webpack": "^4.29.6",
@@ -37,12 +41,15 @@
   "dependencies": {
     "axios": "^0.19.0",
     "babel-polyfill": "^6.26.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
     "json-server": "^0.15.1",
     "react": "^16.8.5",
     "react-animate-height": "^2.0.16",
     "react-dom": "^16.8.5",
     "react-responsive-modal": "^4.0.1",
     "react-router-dom": "^5.1.2",
+    "react-test-renderer": "^16.10.2",
     "styled-components": "^4.4.0",
     "svg-inline-loader": "^0.8.0"
   }
