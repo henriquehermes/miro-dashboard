@@ -2,8 +2,8 @@
 
 Para rodar o servidor:
 
-# npm run mock:api
+## npm run mock:api
 
 Após isto:
 
-# npm start
+## npm start
