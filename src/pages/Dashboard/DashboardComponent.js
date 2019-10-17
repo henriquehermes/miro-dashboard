@@ -41,10 +41,7 @@ export default function Dashboard(props) {
             Adicionar
           </Button>
         )}
-        <Button
-          marginHorizontal={isAdmin ? false : true}
-          onClick={() => handleLogout()}
-        >
+        <Button marginHorizontal={!isAdmin} onClick={() => handleLogout()}>
           Sair
         </Button>
       </Styles.Header>
